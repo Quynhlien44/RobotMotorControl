@@ -1,0 +1,2 @@
+../Core/Src/stm32l1xx_it.c:21:6:SysTick_Handler	2
+../Core/Src/stm32l1xx_it.c:41:6:TIM2_IRQHandler	4

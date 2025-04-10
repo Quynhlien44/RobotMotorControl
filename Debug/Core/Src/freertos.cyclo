@@ -1,0 +1,4 @@
+../Core/Src/freertos.c:40:6:vApplicationGetIdleTaskMemory	1
+../Core/Src/freertos.c:54:6:MX_FREERTOS_Init	1
+../Core/Src/freertos.c:66:6:StartDefaultTask	1
+../Core/Src/freertos.c:77:6:StartMotorControlTask	7
