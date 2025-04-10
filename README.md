@@ -46,21 +46,22 @@ This project implements a motor-controlled robot with obstacle avoidance using a
 ---
 
 ## **Project Structure**
-RobotMotorControl/
-├── Core/
-│ ├── Inc/ # Header files
-│ │ ├── dwt_delay.h
-│ │ ├── gpio.h
-│ │ ├── robot_control.h
-│ ├── Src/ # Source files
-│ │ ├── dwt_delay.c # DWT-based µs delay
-│ │ ├── freertos.c # FreeRTOS task implementations
-│ │ ├── gpio.c # GPIO initialization
-│ │ ├── main.c # System setup and RTOS start
-│ │ ├── stm32l1xx_it.c # TIM2 interrupt for ultrasonic
-├── Drivers/ # STM32 HAL drivers
-├── Middlewares/ # FreeRTOS components
-├── STM32CubeMX/ # Configuration files
+
+    ├── RobotMotorControl/
+    │   ├── Core/
+    │   │   ├── Inc/ # Header files
+    │   │   │   ├── dwt_delay.h
+    │   │   │   ├── gpio.h
+    │   │   │   ├── robot_control.h
+    │   │   ├── Src/ # Source files
+    │   │   │   ├── dwt_delay.c # DWT-based µs delay
+    │   │   │   ├── freertos.c # FreeRTOS task implementations
+    │   │   │   ├── gpio.c # GPIO initialization
+    │   │   │   ├── main.c # System setup and RTOS start
+    │   │   │   ├── stm32l1xx_it.c # TIM2 interrupt for ultrasonic
+    │   ├── Drivers/ # STM32 HAL drivers
+    │   ├── Middlewares/ # FreeRTOS components
+    │   ├── STM32CubeMX/ # Configuration files
 
 
 ---
