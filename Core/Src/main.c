@@ -27,7 +27,7 @@ void MX_USART2_UART_Init(void);
 void DWT_Init(void);
 
 void Main_Init(void) {
-  motorCommandQueue = xQueueCreate(5, sizeof(MotorCommand_t));
+  motorCommandQueue = xQueueCreate(1, sizeof(MotorCommand_t));
   sensorDataQueue = xQueueCreate(5, sizeof(uint32_t));
 
   if(motorCommandQueue == NULL || sensorDataQueue == NULL) {

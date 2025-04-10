@@ -15,8 +15,9 @@ osThreadId defaultTaskHandle;
 osThreadId MotorControlTasHandle;
 osThreadId SensorTaskHandle;
 osThreadId DecisionTaskHandle;
-osMessageQId motorCommandQueueHandle;
-osMessageQId sensorDataQueueHandle;
+
+extern QueueHandle_t motorCommandQueue;
+extern QueueHandle_t sensorDataQueue;
 
 /* External variables */
 extern TIM_HandleTypeDef htim2;
@@ -114,7 +115,7 @@ void StartMotorControlTask(void * argument) {
       __HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_1, cmd.leftSpeed);
       __HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_2, cmd.rightSpeed);
     }
-    osDelay(10);
+    vTaskDelay(pdMS_TO_TICKS(10));
 }
 
 
@@ -154,13 +155,7 @@ void StartDecisionTask(void * argument)
 	    	  xQueueOverwrite(motorCommandQueue, &cmd);
 	      }
 	    }
-	    osDelay(50);
+	    vTaskDelay(pdMS_TO_TICKS(50)); 
 	 }
-}
-
-void DWT_Delay_us(volatile uint32_t microseconds) {
-  uint32_t clk_cycle_start = DWT->CYCCNT;
-  microseconds *= (SystemCoreClock / 1000000);
-  while ((DWT->CYCCNT - clk_cycle_start) < microseconds);
 }
 }
